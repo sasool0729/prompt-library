@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>부록 B — 즉시 사용 프롬프트 20개 | 월급 외 첫 수익 만들기</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0D1B2A;
+    --indigo: #1B2CC1;
+    --violet: #5B21B6;
+    --teal: #0F766E;
+    --light: #F0F4FF;
+    --lgray: #E2E8F0;
+    --gray: #64748B;
+    --white: #FFFFFF;
+    --green: #065F46;
+    --green-bg: #D1FAE5;
+    --warn: #FEF3C7;
+    --warn-tx: #92400E;
+    --cat1: #1B2CC1;
+    --cat2: #0F766E;
+    --cat3: #7C3AED;
+    --cat4: #BE185D;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #F8FAFC;
+    color: var(--navy);
+    line-height: 1.7;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: var(--navy);
+    padding: 28px 24px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 20px rgba(13,27,42,0.3);
+  }
+  .header-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .header-title {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .header-subtitle {
+    font-size: 18px;
+    font-weight: 700;
+    color: #FFFFFF;
+  }
+  .header-badge {
+    background: var(--indigo);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  /* ── HERO NOTICE ── */
+  .hero-notice {
+    background: linear-gradient(135deg, var(--indigo) 0%, var(--violet) 100%);
+    padding: 32px 24px;
+  }
+  .hero-inner {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+  .hero-title {
+    font-size: 22px;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+  .hero-desc {
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+  .hero-tip {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.9);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .hero-tip-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+
+  /* ── NAV TABS ── */
+  .nav-tabs {
+    background: white;
+    border-bottom: 2px solid var(--lgray);
+    position: sticky;
+    top: 81px;
+    z-index: 90;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .nav-tabs-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 0 16px;
+  }
+  .nav-tabs-inner::-webkit-scrollbar { display: none; }
+  .nav-tab {
+    padding: 14px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gray);
+    white-space: nowrap;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .nav-tab:hover { color: var(--navy); }
+  .nav-tab.cat1.active { color: var(--cat1); border-bottom-color: var(--cat1); }
+  .nav-tab.cat2.active { color: var(--cat2); border-bottom-color: var(--cat2); }
+  .nav-tab.cat3.active { color: var(--cat3); border-bottom-color: var(--cat3); }
+  .nav-tab.cat4.active { color: var(--cat4); border-bottom-color: var(--cat4); }
+
+  /* ── MAIN CONTENT ── */
+  .main-content {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+  }
+
+  /* ── CATEGORY SECTION ── */
+  .category-section {
+    margin-bottom: 56px;
+  }
+  .category-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 3px solid;
+  }
+  .cat1 .category-header { border-bottom-color: var(--cat1); }
+  .cat2 .category-header { border-bottom-color: var(--cat2); }
+  .cat3 .category-header { border-bottom-color: var(--cat3); }
+  .cat4 .category-header { border-bottom-color: var(--cat4); }
+
+  .category-icon { font-size: 28px; }
+  .category-name {
+    font-size: 20px;
+    font-weight: 900;
+  }
+  .cat1 .category-name { color: var(--cat1); }
+  .cat2 .category-name { color: var(--cat2); }
+  .cat3 .category-name { color: var(--cat3); }
+  .cat4 .category-name { color: var(--cat4); }
+
+  .category-range {
+    font-size: 12px;
+    color: var(--gray);
+    font-weight: 500;
+    margin-left: auto;
+    background: var(--lgray);
+    padding: 4px 10px;
+    border-radius: 12px;
+  }
+
+  /* ── PROMPT CARD ── */
+  .prompt-card {
+    background: white;
+    border: 1.5px solid var(--lgray);
+    border-radius: 12px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+  .prompt-card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+  .cat1 .prompt-card:hover { border-color: var(--cat1); }
+  .cat2 .prompt-card:hover { border-color: var(--cat2); }
+  .cat3 .prompt-card:hover { border-color: var(--cat3); }
+  .cat4 .prompt-card:hover { border-color: var(--cat4); }
+
+  .prompt-header {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    cursor: pointer;
+    user-select: none;
+    gap: 12px;
+  }
+  .prompt-num {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 900;
+    flex-shrink: 0;
+    color: white;
+  }
+  .cat1 .prompt-num { background: var(--cat1); }
+  .cat2 .prompt-num { background: var(--cat2); }
+  .cat3 .prompt-num { background: var(--cat3); }
+  .cat4 .prompt-num { background: var(--cat4); }
+
+  .prompt-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+    flex: 1;
+  }
+  .prompt-when-badge {
+    font-size: 11px;
+    color: var(--gray);
+    background: #F1F5F9;
+    padding: 3px 8px;
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+  .prompt-toggle-icon {
+    font-size: 16px;
+    color: var(--gray);
+    transition: transform 0.25s;
+    flex-shrink: 0;
+  }
+  .prompt-card.open .prompt-toggle-icon { transform: rotate(180deg); }
+
+  .prompt-body {
+    display: none;
+    border-top: 1px solid var(--lgray);
+  }
+  .prompt-card.open .prompt-body { display: block; }
+
+  .prompt-meta {
+    padding: 16px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    background: #FAFBFC;
+    border-bottom: 1px solid var(--lgray);
+  }
+  @media (max-width: 540px) {
+    .prompt-meta { grid-template-columns: 1fr; }
+  }
+  .meta-block {}
+  .meta-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gray);
+    margin-bottom: 4px;
+  }
+  .meta-text {
+    font-size: 13px;
+    color: var(--navy);
+    line-height: 1.6;
+  }
+
+  /* ── PROMPT CODE BLOCK ── */
+  .prompt-code-section {
+    padding: 16px 20px;
+  }
+  .prompt-code-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gray);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .copy-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 16px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: all 0.18s;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+  .cat1-section .copy-btn { background: var(--cat1); color: white; }
+  .cat2-section .copy-btn { background: var(--cat2); color: white; }
+  .cat3-section .copy-btn { background: var(--cat3); color: white; }
+  .cat4-section .copy-btn { background: var(--cat4); color: white; }
+  .copy-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+  .copy-btn.copied { background: var(--green) !important; }
+
+  .prompt-code {
+    background: #0F172A;
+    border-radius: 8px;
+    padding: 16px 18px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    color: #E2E8F0;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-x: auto;
+    border: 1px solid #1E293B;
+  }
+
+  /* ── CHECKPOINT ── */
+  .prompt-checkpoint {
+    padding: 14px 20px 18px;
+    background: var(--green-bg);
+    border-top: 1px solid #A7F3D0;
+  }
+  .checkpoint-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--green);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .checkpoint-list {
+    list-style: none;
+  }
+  .checkpoint-list li {
+    font-size: 13px;
+    color: #065F46;
+    padding: 3px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.6;
+  }
+  .checkpoint-list li::before {
+    content: "✓";
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 28px 24px;
+    font-size: 13px;
+  }
+  footer span { color: rgba(255,255,255,0.8); font-weight: 600; }
+
+  /* ── SCROLL ANCHOR ── */
+  .scroll-anchor { scroll-margin-top: 140px; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .header-subtitle { font-size: 15px; }
+    .hero-title { font-size: 18px; }
+    .main-content { padding: 24px 16px 60px; }
+    .prompt-code { font-size: 11.5px; }
+    .prompt-title { font-size: 14px; }
+    .prompt-when-badge { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div>
+      <div class="header-title">월급 외 첫 수익 만들기</div>
+      <div class="header-subtitle">부록 B — 즉시 사용 프롬프트 20개</div>
+    </div>
+    <div class="header-badge">구매자 전용</div>
+  </div>
+</header>
+
+<!-- HERO NOTICE -->
+<div class="hero-notice">
+  <div class="hero-inner">
+    <div class="hero-title">이 프롬프트는 단순한 질문이 아닙니다</div>
+    <div class="hero-desc">AI에게 역할을 부여하고, 맥락을 세팅하고, 출력 형식을 지정하는 구조화된 명령어입니다.<br>[대괄호] 안만 본인 상황으로 바꿔 ChatGPT 또는 Claude에 붙여넣으면 됩니다.</div>
+    <div class="hero-tip">
+      <span class="hero-tip-icon">💡</span>
+      <span>아래 각 프롬프트의 <strong style="color:white">복사 버튼</strong>을 누르면 클립보드에 복사됩니다. 모바일에서는 터치 한 번으로 복사되고, PC에서는 클릭으로 복사됩니다.</span>
+    </div>
+  </div>
+</div>
+
+<!-- NAV TABS -->
+<nav class="nav-tabs">
+  <div class="nav-tabs-inner">
+    <a href="#cat1" class="nav-tab cat1 active">📌 주제 기획</a>
+    <a href="#cat2" class="nav-tab cat2">📋 목차·기획</a>
+    <a href="#cat3" class="nav-tab cat3">✍️ 본문 작성</a>
+    <a href="#cat4" class="nav-tab cat4">📣 마케팅·판매</a>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main class="main-content">
+
+  <!-- ──────────────────────────────── -->
+  <!-- CAT 1: 주제 기획 -->
+  <!-- ──────────────────────────────── -->
+  <section class="category-section cat1" id="cat1">
+    <div class="category-header scroll-anchor">
+      <span class="category-icon">📌</span>
+      <span class="category-name">주제 기획</span>
+      <span class="category-range">1~5번</span>
+    </div>
+
+    <!-- P1 -->
+    <div class="prompt-card" onclick="toggleCard(this)">
+      <div class="prompt-header">
+        <span class="prompt-num">1</span>
+        <span class="prompt-title">주제 아이디어 30개 뽑기</span>
+        <span class="prompt-when-badge">아이디어 없을 때</span>
+        <span class="prompt-toggle-icon">▼</span>
+      </div>
+      <div class="prompt-body">
+        <div class="prompt-meta">
+          <div class="meta-block">
+            <div class="meta-label">언제 쓰나요?</div>
+            <div class="meta-text">팔 수 있는 주제가 전혀 안 떠오를 때.<br>내 경험을 상품으로 바꾸고 싶을 때.</div>
+          </div>
+          <div class="meta-block">
+            <div class="meta-label">작성 예시</div>
+            <div class="meta-text">온라인 마케팅팀 5년 / 인스타 광고 세팅, 카피라이팅 잘함</div>
+          </div>
+        </div>
+        <div class="prompt-code-section cat1-section">
+          <div class="prompt-code-label">
+            복붙용 프롬프트
+            <button class="copy-btn" onclick="copyPrompt(this, event)">📋 복사</button>
+          </div>
+          <pre class="prompt-code">당신은 직장인·소상공인·프리랜서를 위한 디지털 상품 기획을 전문으로 하는
+'디지털 상품 아이디어 전략가'입니다.
+
+[내 정보]
+- 내 직업/경험 분야: [입력]
+- 경력 기간: [입력]
+- 잘 아는 일 또는 자주 해본 일: [입력]
+- 원하는 상품 형태: [전자책 / 프롬프트북 / 워크북]
+
+[반드시 지켜야 할 규칙]
+1. 실제로 돈 내고 살 만한 문제 해결형 주제일 것
+2. AI(ChatGPT/Claude)와 결합하면 가치가 높아지는 방향 우선
+3. 1만원~39,000원 사이에서 판매 가능한 수준으로 제안
+
+[출력 형식]
+번호. 주제명 / 타겟 / 해결하는 문제 / 예상 가격 / 왜 팔릴지 1줄
+총 30개 출력.</pre>
+        </div>
+        <div class="prompt-checkpoint">
+          <div class="checkpoint-label">✅ 체크포인트</div>
+          <ul class="checkpoint-list">
+            <li>내가 실제로 알거나 경험한 분야인가?</li>
+            <li>제목만 봐도 누가 왜 살지 보이는가?</li>
+            <li>너무 넓거나 추상적이지 않은가?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- P2 -->
+    <div class="prompt-card" onclick="toggleCard(this)">
+      <div class="prompt-header">
+        <span class="prompt-num">2</span>
+        <span class="prompt-title">주제 시장성 검증</span>
+        <span class="prompt-when-badge">확신이 안 설 때</span>
+        <span class="prompt-toggle-icon">▼</span>
+      </div>
+      <div class="prompt-body">
+        <div class="prompt-meta">
+          <div class="meta-block">
+            <div class="meta-label">언제 쓰나요?</div>
+            <div class="meta-text">주제는 정했는데 '이게 진짜 팔릴까?' 확신이 안 설 때.</div>
+          </div>
+          <div class="meta-block">
+            <div class="meta-label">작성 예시</div>
+            <div class="meta-text">주제: 직장인 퇴근 후 2시간으로 AI 전자책 만들어 크몽에서 파는 법</div>
+          </div>
+        </div>
+        <div class="prompt-code-section cat1-section">
+          <div class="prompt-code-label">복붙용 프롬프트<button class="copy-btn" onclick="copyPrompt(this, event)">📋 복사</button></div>
+          <pre class="prompt-code">당신은 국내 디지털 상품 시장에서 10년 이상 상품 기획과
+판매 전략을 다뤄온 '수익화 전략 컨설턴트'입니다.
+
+아래 전자책 주제의 시장성을 냉정하게 분석해주세요.
+주제: [주제]
+
+[분석 항목 — 5가지 모두 작성]
+① 타겟 독자의 결핍 (지금 가장 힘든 것이 무엇인지 구체적으로)
+② 돈과의 연결성 (수입·절약·시간과 어떻게 연결되는지)
+③ 크몽 경쟁 강도 (상위 노출 상품 수, 후기 수 기준 진입 가능성)
+④ 틈새 차별화 포인트 (지금 시장에서 없거나 약한 것)
+⑤ 적정 가격대와 근거
+
+[출력 형식]
+각 항목을 소제목 + 3줄 이내 분석으로 출력.
+마지막에 '진입 권장 / 주제 수정 필요 / 진입 비권장' 중 하나로 최종 판단 명시.</pre>
+        </div>
+        <div class="prompt-checkpoint">
+          <div class="checkpoint-label">✅ 체크포인트</div>
+          <ul class="checkpoint-list">
+            <li>'진입 권장' 판정이 나왔는가?</li>
+            <li>결핍과 돈이 직접 연결되는가?</li>
+            <li>차별화 포인트가 내가 실제로 만들 수 있는 것인가?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- P3 -->
+    <div class="prompt-card" onclick="toggleCard(this)">
+      <div class="prompt-header">
+        <span class="prompt-num">3</span>
+        <span class="prompt-title">주제 좁히기</span>
+        <span class="prompt-when-badge">경쟁이 많을 때</span>
+        <span class="prompt-toggle-icon">▼</span>
+      </div>
+      <div class="prompt-body">
+        <div class="prompt-meta">
+          <div class="meta-block"><div class="meta-label">언제 쓰나요?</div><div class="meta-text">마음에 드는 주제가 있는데 검색하면 경쟁 상품이 너무 많을 때.</div></div>
+          <div class="meta-block"><div class="meta-label">작성 예시</div><div class="meta-text">넓은 주제: ChatGPT 활용 / 크몽 상위 50개 이상</div></div>
+        </div>
+        <div class="prompt-code-section cat1-section">
+          <div class="prompt-code-label">복붙용 프롬프트<button class="copy-btn" onclick="copyPrompt(this, event)">📋 복사</button></div>
+          <pre class="prompt-code">당신은 레드오션 시장에서 틈새를 찾아 상품을 성공시킨
+'니치마켓 포지셔닝 전문가'입니다.
+
+아래 주제는 크몽에서 경쟁이 너무 많아 그대로 진입하기 어렵습니다.
+넓은 주제: [넓은 주제]
+
+[분화 조건]
+- 각각 다른 타겟을 가져야 함
+- 크몽 상품 제목으로 바로 쓸 수 있는 형태
+- 기존 상위 상품과 명확히 다른 차별점이 있어야 함
+
+[출력 형식]
+번호 / 틈새 주제명 / 타겟 / 기존 상품과의 차별점
+총 10개 출력.</pre>
+        </div>
+        <div class="prompt-checkpoint">
+          <div class="checkpoint-label">✅ 체크포인트</div>
+          <ul class="checkpoint-list">
+            <li>제목만 봐도 타겟이 보이는가?</li>
+            <li>기존 상품보다 더 구체적이고 좁아졌는가?</li>
+            <li>내가 이 주제에 대해 실제로 쓸 수 있는가?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- P4 -->
+    <div class="prompt-card" onclick="toggleCard(this)">
+      <div class="prompt-header">
+        <span class="prompt-num">4</span>
+        <span class="prompt-title">타겟 독자 설정</span>
+        <span class="prompt-when-badge">소개글이 애매할 때</span>
+        <span class="prompt-toggle-icon">▼</span>
+      </div>
+      <div class="prompt-body">
+        <div class="prompt-meta">
+          <div class="meta-block"><div class="meta-label">언제 쓰나요?</div><div class="meta-text">소개글, 썸네일, 제목이 전부 애매할 때. 누구에게 파는 책인지 흐릴 때.</div></div>
+          <div class="meta-block"><div class="meta-label">작성 예시</div><div class="meta-text">주제: 직장인 부업용 AI 전자책 제작법 / 타겟: 퇴근 후 시간 있는 직장인</div></div>
+        </div>
+        <div class="prompt-code-section cat1-section">
+          <div class="prompt-code-label">복붙용 프롬프트<button class="copy-btn" onclick="copyPrompt(this, event)">📋 복사</button></div>
+          <pre class="prompt-code">당신은 구매자의 심리와 행동 패턴을 분석해
+마케팅 전략을 설계하는 '소비자 인사이트 전문가'입니다.
+
+아래 전자책의 핵심 타겟 독자를 분석해주세요.
+전자책 주제: [주제]
+타겟 가설: [타겟]
+
+[분석 항목 — 4가지 모두 작성]
+① 이 독자가 가장 자주 겪는 문제 5가지
+   → 추상적 표현 금지. 구체적인 상황으로 묘사할 것
+② 지금 이 문제를 어떻게 해결하려 하는지 (현재 대안 행동 3가지)
+③ 이상적인 해결책 (이 독자가 꿈꾸는 결과물 한 문장)
+④ 구매를 망설이게 하는 이유 (실제 구매 직전 마음속 반응 3가지)
+
+[출력 형식]
+각 항목을 소제목 + 불릿으로 구조화해서 출력.
+마지막에 이 타겟에게 가장 강하게 먹히는 '카피 핵심 키워드 5개' 추가 출력.</pre>
+        </div>
+        <div class="prompt-checkpoint">
+          <div class="checkpoint-label">✅ 체크포인트</div>
+          <ul class="checkpoint-list">
+            <li>문제 5가지 중 내 상품이 직접 해결하는 것이 있는가?</li>
+            <li>구매 망설임 이유를 소개글에서 미리 해소할 수 있는가?</li>
+            <li>카피 핵심 키워드가 썸네일·제목·소개글에 들어갔는가?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- P5 -->
+    <div class="prompt-card" onclick="toggleCard(this)">
+      <div class="prompt-header">
+        <span class="prompt-num">5</span>
+        <span class="prompt-title">크몽 키워드 전략 수립</span>
+        <span class="prompt-when-badge">등록 준비할 때</span>
+        <span class="prompt-toggle-icon">▼</span>
+      </div>
+      <div class="prompt-body">
+        <div class="prompt-meta">
+          <div class="meta-block"><div class="meta-label">언제 쓰나요?</div><div class="meta-text">크몽 등록 시 제목·태그에 넣을 키워드가 안 떠오를 때.</div></div>
+          <div class="meta-block"><div class="meta-label">작성 예시</div><div class="meta-text">주제: 직장인 부업용 AI 전자책 제작법 / 타겟: 부업 초보 직장인</div></div>
+        </div>
+        <div class="prompt-code-section cat1-section">
+          <div class="prompt-code-label">복붙용 프롬프트<button class="copy-btn" onclick="copyPrompt(this, event)">📋 복사</button></div>
+          <pre class="prompt-code">당신은 크몽 플랫폼의 검색 알고리즘과
+구매자 검색 패턴을 연구해온 '플랫폼 SEO 전략가'입니다.
+
+아래 전자책이 크몽 검색에서 상단 노출될 수 있도록
+키워드 전략을 설계해주세요.
+전자책 주제: [주제]
+타겟: [타겟]
+
+[키워드 선정 기준]
+- 실제 크몽 검색창에 입력할 법한 2~4단어 조합
+- 구매 의도가 느껴지는 키워드 우선 (정보성 X, 구매성 O)
+- 너무 광범위한 단어 제외
+
+[출력 형식]
+① 메인 키워드 5개 — 제목에 반드시 포함할 핵심 키워드 (추천 이유 한 줄씩)
+② 서브 키워드 15개 — 태그와 소개글 본문에 넣을 키워드
+③ 절대 쓰면 안 되는 키워드 3개 — 경쟁 과다 또는 구매 의도 낮은 것</pre>
+        </div>
+        <div class="prompt-checkpoint">
+          <div class="checkpoint-label">✅ 체크포인트</div>
+          <ul class="checkpoint-list">
+            <li>메인 키워드가 실제로 크몽 제목에 들어갔는가?</li>
+            <li>'절대 쓰면 안 되는 키워드'를 피했는가?</li>
+            <li>서브 키워드가 소개글 본문에 자연스럽게 녹아 있는가?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────────────────────────── -->
+  <!-- CAT 2: 목차·기획 -->
+  <!-- ──────────────────────────────── -->
+  <section class="category-section cat2" id="cat2">
+    <div class="category-header scroll-anchor">
+      <span class="category-icon">📋</span>
+      <span class="category-name">목차·기획</span>
+      <span class="category-range">6~10번</span>
+    </div>
+
+    <!-- P6 -->
+    <div class="prompt-card" onclick="toggleCard(this)">
+      <div class="prompt-header"><span class="prompt-num">6</span><span class="prompt-title">목차 초안 생성</span><span class="prompt-when-badge">챕터 구성이 막힐 때</span><span class="prompt-toggle-icon">▼</span></div>
+      <div class="prompt-body">
+        <div class="prompt-meta">
+          <div class="meta-block"><div class="meta-label">언제 쓰나요?</div><div class="meta-text">주제는 정했는데 챕터를 어떻게 나눌지 막힐 때.</div></div>
+          <div class="meta-block"><div class="meta-label">작성 예시</div><div class="meta-text">주제: 직장인 부업용 AI 전자책 / 결과: 전자책 완성 + 크몽 등록</div></div>
+        </div>
+        <div class="prompt-code-section cat2-section">
+          <div class="prompt-code-label">복붙용 프롬프트<button class="copy-btn" onclick="copyPrompt(this, event)">📋 복사</button></div>
+          <pre class="prompt-code">당신은 베스트셀러 전자책 50권 이상의 목차 구조를 분석하고
+독자 완주율을 높이는 콘텐츠를 설계해온
+'디지털 콘텐츠 구조 설계 전문가'입니다.
+
+[전자책 기본 정보]
+- 주제: [주제]
+- 타겟: [타겟]
+- 독자의 문제: [문제]
+- 이 책을 읽고 얻는 것: [결과]
+
+[목차 설계 원칙]
+- 챕터 수: 5~7개
+- 각 챕터에 소제목 3~5개
+- 각 챕터 끝에 워크북 또는 실습 1개 포함
+- 마지막에 부록 구성 제안
+- 독자가 순서대로 따라가면 결과물이 완성되는 구조
+
+[출력 형식]
+CH번호. 챕터명
+  └ 소제목 1~3
+  └ 워크북: [제목]
+마지막에 '이 목차의 강점 3가지 / 보완 필요한 부분 1가지' 추가 출력.</pre>
+        </div>
+        <div class="prompt-checkpoint">
+          <div class="checkpoint-label">✅ 체크포인트</div>
+          <ul class="checkpoint-list">
+            <li>이 순서대로 따라가면 독자가 결과물을 완성할 수 있는가?</li>
+            <li>'보완 필요한 부분'을 실제로 수정했는가?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- P7 -->
+    <div class="prompt-card" onclick="toggleCard(this)">
+      <div class="prompt-header"><span class="prompt-num">7</span><span class="prompt-title">목차 검증 및 개선</span><span class="prompt-when-badge">초안 점검할 때</span><span class="prompt-toggle-icon">▼</span></div>
+      <div class="prompt-body">
+        <div class="prompt-meta">
+          <div class="meta-block"><div class="meta-label">언제 쓰나요?</div><div class="meta-text">목차 초안을 만들었는데 빠진 게 없는지 전문가 시각으로 점검받고 싶을 때.</div></div>
+          <div class="meta-block"><div class="meta-label">작성 예시</div><div class="meta-text">목차 초안 붙여넣기 → 검토 요청</div></div>
+        </div>
+        <div class="prompt-code-section cat2-section">
+          <div class="prompt-code-label">복붙용 프롬프트<button class="copy-btn" onclick="copyPrompt(this, event)">📋 복사</button></div>
+          <pre class="prompt-code">당신은 출판 편집자 출신으로 디지털 전자책 구조를
+수백 권 검토해온 '콘텐츠 품질 심사위원'입니다.
+
+아래 목차를 독자 입장에서 냉정하게 검토해주세요.
+[목차 붙여넣기]
+
+[검토 항목 — 4가지 모두 평가]
+① 흐름의 완결성 — 이 순서대로 읽으면 약속된 결과를 얻을 수 있는가?
+② 누락 항목 — 반드시 있어야 하는데 빠진 챕터 또는 소제목이 있는가?
+③ 중복·비효율 항목 — 합쳐도 되거나 없애도 되는 챕터가 있는가?
+④ 독자 이탈 위험 구간 — 읽다가 포기할 가능성이 높은 구간은 어디인가?
+
+[출력 형식]
+각 항목을 소제목 + 구체적 근거로 출력.
+마지막에 수정된 목차 최종안을 다시 출력.</pre>
+        </div>
+        <div class="prompt-checkpoint">
+          <div class="checkpoint-label">✅ 체크포인트</div>
+          <ul class="checkpoint-list">
+            <li>'누락 항목'을 실제로 추가했는가?</li>
+            <li>'이탈 위험 구간'을 더 쉽게 풀었는가?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- P8 -->
+    <div class="prompt-card" onclick="toggleCard(this)">
+      <div class="prompt-header"><span class="prompt-num">8</span><span class="prompt-title">범프셀링 상품 기획</span><span class="prompt-when-badge">첫 판매 이후 참고</span><span class="prompt-toggle-icon">▼</span></div>
+      <div class="prompt-body">
+        <div class="prompt-meta">
+          <div class="meta-block"><div class="meta-label">언제 쓰나요?</div><div class="meta-text">메인 상품 다음에 붙일 추가 상품 구조가 필요할 때. 첫 판매 이후 참고.</div></div>
+          <div class="meta-block"><div class="meta-label">작성 예시</div><div class="meta-text">메인: 월급 외 첫 수익 만들기 / 19,900원 / 직장인 초보</div></div>
+        </div>
+        <div class="prompt-code-section cat2-section">
+          <div class="prompt-code-label">복붙용 프롬프트<button class="copy-btn" onclick="copyPrompt(this, event)">📋 복사</button></div>
+          <pre class="prompt-code">당신은 디지털 상품 판매 퍼널을 설계해
+단일 상품의 객단가를 3배 이상 높여온
+'수익화 퍼널 설계 전문가'입니다.
+
+아래 메인 상품을 기준으로 판매 확장 구조를 설계해주세요.
+메인 상품: [제목] / 가격: [가격] / 핵심 구매자: [타겟]
+
+[설계 항목]
+① 범프셀링 상품 3개 (결제 직전 제안, 메인의 30~50% 가격)
+② 업셀링 상품 3개 (구매 후 제안, 메인보다 고가)
+
+[출력 형식]
+번호 / 상품명 / 가격 / 포함 내용 / 제안 타이밍 / 예상 전환율
+마지막에 '지금 당장 만들 수 있는 것 vs 나중에 만들 것' 구분해서 출력.</pre>
+        </div>
+        <div class="prompt-checkpoint">
+          <div class="checkpoint-label">✅ 체크포인트</div>
+          <ul class="checkpoint-list">
+            <li>메인 상품 월 10개 이상 팔린 후 진행할 것</li>
+            <li>'지금 당장 만들 수 있는 것' 중 가장 빠른 것 1개만 선택</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- P9 -->
+    <div class="prompt-card" onclick="toggleCard(this)">
+      <div class="prompt-header"><span class="prompt-num">9</span><span class="prompt-title">경쟁 상품 분석 및 차별화</span><span class="prompt-when-badge">포지셔닝 잡을 때</span><span class="prompt-toggle-icon">▼</span></div>
+      <div class="prompt-body">
+        <div class="prompt-meta">
+          <div class="meta-block"><div class="meta-label">언제 쓰나요?</div><div class="meta-text">크몽 상위 상품을 보고 어떻게 차별화할지 전략이 필요할 때.</div></div>
+          <div class="meta-block"><div class="meta-label">작성 예시</div><div class="meta-text">키워드: AI 전자책 제작 / 상위 3개 상품명·가격·후기 수 붙여넣기</div></div>
+        </div>
+        <div class="prompt-code-section cat2-section">
+          <div class="prompt-code-label">복붙용 프롬프트<button class="copy-btn" onclick="copyPrompt(this, event)">📋 복사</button></div>
+          <pre class="prompt-code">당신은 경쟁사 상품을 해부해 후발 주자가 시장에서
+살아남는 전략을 설계해온 '경쟁 포지셔닝 전략가'입니다.
+
+아래 크몽 상위 경쟁 상품들을 분석하고 차별화 전략을 제시해주세요.
+검색 키워드: [키워드]
+경쟁 상품 정보: [상품명·가격·후기 수·구성 방식 붙여넣기]
+
+[분석 항목]
+① 경쟁 상품들의 공통 강점
+② 경쟁 상품들의 공통 약점 (후기 불만 사항 포함)
+③ 내가 진입할 수 있는 빈틈 3가지
+④ 차별화 실행 전략 5가지
+
+[출력 형식]
+각 항목 소제목 + 구체적 근거.
+마지막에 '내 상품이 클릭받으려면 제목에 반드시 넣어야 할 요소' 3가지 출력.</pre>
+        </div>
+        <div class="prompt-checkpoint">
+          <div class="checkpoint-label">✅ 체크포인트</div>
+          <ul class="checkpoint-list">
+            <li>경쟁 상품의 후기 불만 사항을 내 책에서 직접 해결하는가?</li>
+            <li>'빈틈 3가지' 중 내가 실제로 실행 가능한 것인가?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- P10 -->
+    <div class="prompt-card" onclick="toggleCard(this)">
+      <div class="prompt-header"><span class="prompt-num">10</span><span class="prompt-title">보너스·부록 구성 기획</span><span class="prompt-when-badge">체감 가치 높일 때</span><span class="prompt-toggle-icon">▼</span></div>
+      <div class="prompt-body">
+        <div class="prompt-meta">
+          <div class="meta-block"><div class="meta-label">언제 쓰나요?</div><div class="meta-text">구매자에게 줄 추가 자료가 필요할 때. 상품 체감 가치를 높이고 싶을 때.</div></div>
+          <div class="meta-block"><div class="meta-label">작성 예시</div><div class="meta-text">전자책: 월급 외 첫 수익 만들기 / 타겟: 직장인 초보</div></div>
+        </div>
+        <div class="prompt-code-section cat2-section">
+          <div class="prompt-code-label">복붙용 프롬프트<button class="copy-btn" onclick="copyPrompt(this, event)">📋 복사</button></div>
+          <pre class="prompt-code">당신은 디지털 상품의 체감 가치를 높여
+후기 점수와 재구매율을 동시에 올려온
+'구매자 경험 설계 전문가'입니다.
+
+아래 전자책의 구매자에게 줄 보너스·부록 구성을 기획해주세요.
+전자책: [제목] / 타겟: [타겟] / 가격: [가격]
+
+[기획 조건]
+- 만드는 데 1~3시간이면 되는 것
+- 메인 콘텐츠와 연결되어 실용성이 높은 것
+- 구매자가 '이것만으로도 본전'이라고 느낄 만한 것
+
+[출력 형식]
+번호 / 보너스명 / 형태 / 예상 제작 시간 / 구매자 체감 가치
+마지막에 '지금 당장 만들 수 있는 TOP 3' 별도 표기.</pre>
+        </div>
+        <div class="prompt-checkpoint">
+          <div class="checkpoint-label">✅ 체크포인트</div>
+          <ul class="checkpoint-list">
+            <li>'TOP 3' 중 1개만 먼저 만들 것</li>
+            <li>보너스가 메인 전자책 내용을 실전에서 쓸 수 있게 도와주는가?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────────────────────────── -->
+  <!-- CAT 3: 본문 작성 -->
+  <!-- ──────────────────────────────── -->
+  <section class="category-section cat3" id="cat3">
+    <div class="category-header scroll-anchor">
+      <span class="category-icon">✍️</span>
+      <span class="category-name">본문 작성</span>
+      <span class="category-range">11~15번</span>
+    </div>
+
+    <!-- P11 -->
+    <div class="prompt-card" onclick="toggleCard(this)">
+      <div class="prompt-header"><span class="prompt-num">11</span><span class="prompt-title">소제목별 본문 작성</span><span class="prompt-when-badge">본문이 막힐 때</span><span class="prompt-toggle-icon">▼</span></div>
+      <div class="prompt-body">
+        <div class="prompt-meta">
+          <div class="meta-block"><div class="meta-label">언제 쓰나요?</div><div class="meta-text">목차는 잡혔는데 소제목별 본문이 막힐 때.</div></div>
+          <div class="meta-block"><div class="meta-label">작성 예시</div><div class="meta-text">소제목: 크몽에서 팔리는 전자책 제목 구조 / 독자: 초보</div></div>
+        </div>
+        <div class="prompt-code-section cat3-section">
+          <div class="prompt-code-label">복붙용 프롬프트<button class="copy-btn" onclick="copyPrompt(this, event)">📋 복사</button></div>
+          <pre class="prompt-code">당신은 독자가 끝까지 읽고 실행하게 만드는
+디지털 전자책 본문을 200편 이상 써온
+'실전형 콘텐츠 라이터'입니다.
+
+[전자책 기본 정보]
+- 책 제목: [제목]
+- 독자: [타겟]
+- 독자 수준: AI 툴을 처음 써보는 초보
+- 지금 쓸 소제목: [소제목]
+
+[작성 원칙 — 반드시 준수]
+- 분량: 400~600자
+- 말투: 친근하고 실용적인 '~입니다' 체
+- 구조: 개념 설명 → 실전 예시 → 핵심 정리 1줄
+- 서론 문장('이 섹션에서는~') 절대 금지
+- 전문 용어는 처음 등장 시 괄호로 쉽게 설명
+
+[출력 후 자기 검토]
+출력 마지막에 '이 본문의 개선 가능한 점 1가지'를 스스로 제시할 것.</pre>
+        </div>
+        <div class="prompt-checkpoint">
+          <div class="checkpoint-label">✅ 체크포인트</div>
+          <ul class="checkpoint-list">
+            <li>AI 서론 문장이 없는가?</li>
+            <li>예시가 추상적이지 않고 구체적인가?</li>
+            <li>내 경험 한 줄을 직접 추가했는가?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- P12 -->
+    <div class="prompt-card" onclick="toggleCard(this)">
+      <div class="prompt-header"><span class="prompt-num">12</span><span class="prompt-title">단계형 실습 파트 작성</span><span class="prompt-when-badge">따라하기 형태로 바꿀 때</span><span class="prompt-toggle-icon">▼</span></div>
+      <div class="prompt-body">
+        <div class="prompt-meta">
+          <div class="meta-block"><div class="meta-label">언제 쓰나요?</div><div class="meta-text">설명형 본문을 독자가 직접 따라하는 단계형으로 바꾸고 싶을 때.</div></div>
+          <div class="meta-block"><div class="meta-label">작성 예시</div><div class="meta-text">실습 소제목: 크몽에서 전문가 등록하기</div></div>
+        </div>
+        <div class="prompt-code-section cat3-section">
+          <div class="prompt-code-label">복붙용 프롬프트<button class="copy-btn" onclick="copyPrompt(this, event)">📋 복사</button></div>
+          <pre class="prompt-code">당신은 IT 튜토리얼과 실습 가이드를 전문으로 제작해온
+'단계별 실행 가이드 전문 작가'입니다.
+
+아래 소제목을 독자가 화면을 보며 따라할 수 있는
+단계별 실습 가이드로 작성해주세요.
+실습 소제목: [실습 소제목]
+
+[작성 원칙 — 반드시 준수]
+- 단계: 3~5단계로 구분
+- 각 단계 첫 문장: 동사로 시작 (클릭하세요 / 입력하세요 / 선택하세요)
+- 각 단계에 '왜 이 단계가 필요한지' 1문장 설명 포함
+- 실제 화면에서 보이는 버튼명·메뉴명 정확하게 명시
+- 초보자가 실수하기 쉬운 포인트에 ⚠️ 표시
+- 마지막에 '이 실습을 완료하면 ____ 상태가 됩니다' 문장 포함</pre>
+        </div>
+        <div class="prompt-checkpoint">
+          <div class="checkpoint-label">✅ 체크포인트</div>
+          <ul class="checkpoint-list">
+            <li>각 단계 첫 문장이 동사로 시작하는가?</li>
+            <li>⚠️ 주의사항이 실제 초보자가 헷갈리는 부분인가?</li>
+            <li>마지막 완료 문장이 들어가 있는가?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- P13 -->
+    <div class="prompt-card" onclick="toggleCard(this)">
+      <div class="prompt-header"><span class="prompt-num">13</span><span class="prompt-title">AI 초안 → 사람다운 글 리라이팅</span><span class="prompt-when-badge">AI 냄새 날 때</span><span class="prompt-toggle-icon">▼</span></div>
+      <div class="prompt-body">
+        <div class="prompt-meta">
+          <div class="meta-block"><div class="meta-label">언제 쓰나요?</div><div class="meta-text">AI가 쓴 초안이 너무 딱딱하거나 AI 냄새가 날 때.</div></div>
+          <div class="meta-block"><div class="meta-label">작성 예시</div><div class="meta-text">원문 초안 붙여넣기 + 원하는 톤: 친근한 실무형</div></div>
+        </div>
+        <div class="prompt-code-section cat3-section">
+          <div class="prompt-code-label">복붙용 프롬프트<button class="copy-btn" onclick="copyPrompt(this, event)">📋 복사</button></div>
+          <pre class="prompt-code">당신은 AI가 생성한 글에서 기계 냄새를 제거하고
+사람의 온기와 개성을 불어넣는
+'AI 텍스트 인간화 전문 에디터'입니다.
+
+아래 AI가 쓴 본문을 더 사람다운 글로 리라이팅해주세요.
+[본문 붙여넣기]
+
+원하는 톤: [친근한 실무형 / 차분한 설명형 / 자신감 있는 실행형]
+
+[리라이팅 원칙 — 반드시 준수]
+① 서론 문장 제거: '이 섹션에서는~' 전부 삭제
+② 문장 길이 불균일화: 긴 문장 사이에 짧고 강한 문장 2~3개 삽입
+③ 전문 용어 친화적 처리: 괄호로 쉬운 설명 추가
+④ 원래 정보 유지: 내용은 바꾸지 않고 표현만 바꿀 것
+⑤ 첫 문장은 독자의 고민이나 상황으로 시작
+
+[출력 형식]
+리라이팅 본문 출력 후,
+'원문과 달라진 핵심 3가지' 별도 출력.</pre>
+        </div>
+        <div class="prompt-checkpoint">
+          <div class="checkpoint-label">✅ 체크포인트</div>
+          <ul class="checkpoint-list">
+            <li>읽었을 때 AI가 쓴 것 같은 느낌이 드는가?</li>
+            <li>첫 문장이 독자의 상황으로 시작하는가?</li>
+            <li>내 경험 한 줄을 직접 추가했는가?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- P14 -->
+    <div class="prompt-card" onclick="toggleCard(this)">
+      <div class="prompt-header"><span class="prompt-num">14</span><span class="prompt-title">챕터 마무리 워크북 생성</span><span class="prompt-when-badge">워크북 질문이 막힐 때</span><span class="prompt-toggle-icon">▼</span></div>
+      <div class="prompt-body">
+        <div class="prompt-meta">
+          <div class="meta-block"><div class="meta-label">언제 쓰나요?</div><div class="meta-text">챕터 끝에 넣을 독자 실행 워크북이 막힐 때.</div></div>
+          <div class="meta-block"><div class="meta-label">작성 예시</div><div class="meta-text">챕터명: 팔리는 주제 찾기 / 결과: 주제 선정 완료</div></div>
+        </div>
+        <div class="prompt-code-section cat3-section">
+          <div class="prompt-code-label">복붙용 프롬프트<button class="copy-btn" onclick="copyPrompt(this, event)">📋 복사</button></div>
+          <pre class="prompt-code">당신은 독자가 읽고 멈추지 않고 바로 실행하게 만드는
+워크북과 액션 플래너를 500개 이상 설계해온
+'실행 촉진 콘텐츠 설계 전문가'입니다.
+
+아래 챕터의 마무리 워크북을 설계해주세요.
+챕터명: [챕터명]
+이 챕터에서 독자가 배운 것: [핵심 내용]
+
+[워크북 설계 원칙]
+- 질문 수: 5~8개
+- 형식: 질문 + 빈칸 (독자가 직접 손으로 쓰는 공간)
+- 질문은 구체적으로: '어떻게 느끼나요?' 금지
+- 마지막 질문은 '다음 챕터로 넘어가기 전 체크' 형태로
+
+[출력 형식]
+워크북 제목
+질문 번호 / 질문 내용 / 빈칸 크기 안내
+마지막에 '이 워크북 완성 = ____ 준비 완료' 문장 포함.</pre>
+        </div>
+        <div class="prompt-checkpoint">
+          <div class="checkpoint-label">✅ 체크포인트</div>
+          <ul class="checkpoint-list">
+            <li>질문이 너무 추상적이지 않은가?</li>
+            <li>독자가 5분 안에 완성할 수 있는 분량인가?</li>
+            <li>마지막 완료 문장이 다음 챕터로 연결되는가?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- P15 -->
+    <div class="prompt-card" onclick="toggleCard(this)">
+      <div class="prompt-header"><span class="prompt-num">15</span><span class="prompt-title">즉시 사용 프롬프트 팩 생성</span><span class="prompt-when-badge">부록 만들 때</span><span class="prompt-toggle-icon">▼</span></div>
+      <div class="prompt-body">
+        <div class="prompt-meta">
+          <div class="meta-block"><div class="meta-label">언제 쓰나요?</div><div class="meta-text">부록으로 넣을 구매자 전용 프롬프트 묶음이 필요할 때.</div></div>
+          <div class="meta-block"><div class="meta-label">작성 예시</div><div class="meta-text">주제: 직장인 부업용 AI 전자책 제작 / 수량: 10개</div></div>
+        </div>
+        <div class="prompt-code-section cat3-section">
+          <div class="prompt-code-label">복붙용 프롬프트<button class="copy-btn" onclick="copyPrompt(this, event)">📋 복사</button></div>
+          <pre class="prompt-code">당신은 ChatGPT와 Claude의 잠재력을 100% 끌어내는
+구조화된 프롬프트를 전문으로 설계하는
+'수석 프롬프트 엔지니어'입니다.
+
+아래 전자책의 부록으로 들어갈 즉시 사용 프롬프트 팩을 설계해주세요.
+주제: [주제] / 타겟: [타겟] / 수량: 10개
+
+[설계 원칙 — 반드시 준수]
+- 각 프롬프트에 사용 시점 제목 달기
+- [대괄호] 안은 독자가 바꿔 넣는 변수로 표시
+- 페르소나 주입 포함: '당신은 ~입니다' 형태로 시작
+- ChatGPT/Claude에 붙여넣으면 바로 작동하는 형태
+
+[출력 형식]
+번호 / 사용 시점 제목 / 프롬프트 본문</pre>
+        </div>
+        <div class="prompt-checkpoint">
+          <div class="checkpoint-label">✅ 체크포인트</div>
+          <ul class="checkpoint-list">
+            <li>페르소나 주입이 각 프롬프트에 들어가 있는가?</li>
+            <li>[대괄호] 변수가 명확하게 표시됐는가?</li>
+            <li>붙여넣었을 때 바로 작동하는가?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────────────────────────── -->
+  <!-- CAT 4: 마케팅·판매 -->
+  <!-- ──────────────────────────────── -->
+  <section class="category-section cat4" id="cat4">
+    <div class="category-header scroll-anchor">
+      <span class="category-icon">📣</span>
+      <span class="category-name">마케팅·판매</span>
+      <span class="category-range">16~20번</span>
+    </div>
+
+    <!-- P16 -->
+    <div class="prompt-card" onclick="toggleCard(this)">
+      <div class="prompt-header"><span class="prompt-num">16</span><span class="prompt-title">크몽 상세페이지 카피 작성</span><span class="prompt-when-badge">소개글이 막힐 때</span><span class="prompt-toggle-icon">▼</span></div>
+      <div class="prompt-body">
+        <div class="prompt-meta">
+          <div class="meta-block"><div class="meta-label">언제 쓰나요?</div><div class="meta-text">크몽 소개글·상세페이지 문구가 막힐 때.</div></div>
+          <div class="meta-block"><div class="meta-label">작성 예시</div><div class="meta-text">상품: 직장인 부업 AI 전자책 / 19,900원 / 7챕터+워크북+프롬프트</div></div>
+        </div>
+        <div class="prompt-code-section cat4-section">
+          <div class="prompt-code-label">복붙용 프롬프트<button class="copy-btn" onclick="copyPrompt(this, event)">📋 복사</button></div>
+          <pre class="prompt-code">당신은 크몽에서 월 판매 TOP 1% 셀러들의
+상세페이지 카피를 전담 작성해온
+'디지털 상품 전문 카피라이터'입니다.
+
+아래 상품의 크몽 상세페이지 카피를 작성해주세요.
+상품: [제목] / 타겟: [타겟] / 가격: [가격]
+구성: [챕터 수, 워크북 수, 프롬프트 수]
+
+[카피 구조 — 순서대로 모두 작성]
+① 공감 훅 (첫 3줄 — 타겟의 가장 아픈 고민으로 시작)
+② 이런 분께 추천합니다 (3가지)
+③ 이 상품으로 해결되는 것 (3가지)
+④ 상품 구성 (목록 형태)
+⑤ 사용 방법 3단계
+⑥ 경쟁 상품과의 차별점
+⑦ FAQ 5개
+
+[작성 원칙]
+- '무조건', '반드시 성공', '보장' 같은 과장 표현 절대 금지
+- 구체적 숫자 사용: '여러 개'가 아니라 '7챕터'처럼</pre>
+        </div>
+        <div class="prompt-checkpoint">
+          <div class="checkpoint-label">✅ 체크포인트</div>
+          <ul class="checkpoint-list">
+            <li>공감 훅 3줄에 과장 표현이 없는가?</li>
+            <li>구성 목록에 구체적인 숫자가 들어갔는가?</li>
+            <li>FAQ가 실제로 구매자가 궁금해할 질문인가?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- P17 -->
+    <div class="prompt-card" onclick="toggleCard(this)">
+      <div class="prompt-header"><span class="prompt-num">17</span><span class="prompt-title">크몽 제목 A/B 테스트</span><span class="prompt-when-badge">전환율 낮을 때</span><span class="prompt-toggle-icon">▼</span></div>
+      <div class="prompt-body">
+        <div class="prompt-meta">
+          <div class="meta-block"><div class="meta-label">언제 쓰나요?</div><div class="meta-text">등록 2주 후 클릭은 되는데 구매가 안 될 때. 제목을 바꿔보고 싶을 때.</div></div>
+          <div class="meta-block"><div class="meta-label">작성 예시</div><div class="meta-text">현재 제목: 직장인 부업 AI 디지털상품 제작법 — 전자책부터 첫 판매까지</div></div>
+        </div>
+        <div class="prompt-code-section cat4-section">
+          <div class="prompt-code-label">복붙용 프롬프트<button class="copy-btn" onclick="copyPrompt(this, event)">📋 복사</button></div>
+          <pre class="prompt-code">당신은 크몽 플랫폼에서 A/B 테스트를 통해
+클릭률과 전환율을 동시에 높여온
+'퍼포먼스 마케팅 카피 전문가'입니다.
+
+아래 전자책의 크몽 노출용 제목 후보 10개를 만들어주세요.
+기존 제목: [기존 제목]
+현재 상황: [등록 기간, 클릭/구매 현황]
+
+[제목 작성 원칙]
+- 40자 이내
+- 구조: 타겟 + 핵심 내용 + 결과 또는 차별점
+- 과장 표현 절대 금지
+- 서로 다른 결의 제목으로 제안
+
+[출력 형식]
+번호 / 제목 후보 / 유형(검색형/결과형/타겟형/문제해결형)
+/ 강점 1줄 / 약점 1줄
+마지막에 '가장 추천하는 제목과 이유' 별도 출력.</pre>
+        </div>
+        <div class="prompt-checkpoint">
+          <div class="checkpoint-label">✅ 체크포인트</div>
+          <ul class="checkpoint-list">
+            <li>제목 변경은 최소 2주 유지 후 할 것</li>
+            <li>변경 전후 조회수·구매수 반드시 기록할 것</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- P18 -->
+    <div class="prompt-card" onclick="toggleCard(this)">
+      <div class="prompt-header"><span class="prompt-num">18</span><span class="prompt-title">인스타·스레드 콘텐츠 스크립트</span><span class="prompt-when-badge">홍보글 필요할 때</span><span class="prompt-toggle-icon">▼</span></div>
+      <div class="prompt-body">
+        <div class="prompt-meta">
+          <div class="meta-block"><div class="meta-label">언제 쓰나요?</div><div class="meta-text">스레드·인스타에서 상품 홍보용 콘텐츠나 릴스 스크립트가 필요할 때.</div></div>
+          <div class="meta-block"><div class="meta-label">작성 예시</div><div class="meta-text">상품: 월급 외 첫 수익 만들기 / 플랫폼: 스레드</div></div>
+        </div>
+        <div class="prompt-code-section cat4-section">
+          <div class="prompt-code-label">복붙용 프롬프트<button class="copy-btn" onclick="copyPrompt(this, event)">📋 복사</button></div>
+          <pre class="prompt-code">당신은 팔로워 1만 이하 계정에서도
+단일 게시물로 디지털 상품을 판매시킨 경험이 있는
+'SNS 퍼널 마케터'입니다.
+
+아래 상품을 홍보하는 SNS 콘텐츠를 작성해주세요.
+상품: [제목] / 플랫폼: [스레드/인스타]
+
+[콘텐츠 구조 — 순서대로]
+① 훅 (첫 1~2줄 — 타겟이 멈추게 만드는 문장)
+② 공감 (타겟의 상황을 정확하게 묘사)
+③ 전환점 (내가 어떻게 해결했는지 또는 무엇을 발견했는지)
+④ 가치 제공 (읽은 것만으로도 도움되는 정보 1가지)
+⑤ CTA (프로필 링크 또는 댓글 유도)
+
+[작성 원칙]
+- 훅에 '나 얘기네'가 느껴져야 함
+- 광고처럼 보이면 안 됨. 경험담 형식으로
+- 전체 길이: 스레드 기준 200자 내외</pre>
+        </div>
+        <div class="prompt-checkpoint">
+          <div class="checkpoint-label">✅ 체크포인트</div>
+          <ul class="checkpoint-list">
+            <li>첫 1~2줄에 타겟이 멈추는가?</li>
+            <li>광고처럼 보이지 않는가?</li>
+            <li>CTA가 '구매하세요'가 아닌 자연스러운 행동 유도인가?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- P19 -->
+    <div class="prompt-card" onclick="toggleCard(this)">
+      <div class="prompt-header"><span class="prompt-num">19</span><span class="prompt-title">구매자 후기 요청 메시지</span><span class="prompt-when-badge">구매 3일 후</span><span class="prompt-toggle-icon">▼</span></div>
+      <div class="prompt-body">
+        <div class="prompt-meta">
+          <div class="meta-block"><div class="meta-label">언제 쓰나요?</div><div class="meta-text">구매 3일 후 후기 요청 메시지를 보낼 때.</div></div>
+          <div class="meta-block"><div class="meta-label">작성 예시</div><div class="meta-text">상품: 월급 외 첫 수익 만들기 / 채널: 크몽 메시지</div></div>
+        </div>
+        <div class="prompt-code-section cat4-section">
+          <div class="prompt-code-label">복붙용 프롬프트<button class="copy-btn" onclick="copyPrompt(this, event)">📋 복사</button></div>
+          <pre class="prompt-code">당신은 구매자의 심리를 이해해
+거부감 없이 후기를 이끌어내는 메시지를 전문으로 작성하는
+'고객 관계 커뮤니케이션 전문가'입니다.
+
+아래 상품의 구매 3일 후 후기 요청 메시지를 작성해주세요.
+상품명: [상품명]
+
+[메시지 작성 원칙 — 반드시 준수]
+- 부담스럽지 않은 톤
+- 200자 이내
+- 좋은 점과 아쉬운 점 모두 솔직하게 요청
+- 불만은 DM으로 먼저 알려달라는 내용 포함
+- 후기가 업데이트와 소개글 개선에 반영된다는 안내 포함
+- 보상·보너스 제공 언급 절대 금지
+
+[출력 형식]
+메시지 본문 출력 후,
+'이 메시지에서 거부감이 생길 수 있는 표현' 체크해서 별도 출력.</pre>
+        </div>
+        <div class="prompt-checkpoint">
+          <div class="checkpoint-label">✅ 체크포인트</div>
+          <ul class="checkpoint-list">
+            <li>보상·보너스 언급이 없는가?</li>
+            <li>'거부감이 생길 수 있는 표현' 체크 결과를 반영했는가?</li>
+            <li>200자 이내인가?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- P20 -->
+    <div class="prompt-card" onclick="toggleCard(this)">
+      <div class="prompt-header"><span class="prompt-num">20</span><span class="prompt-title">파생 상품 기획</span><span class="prompt-when-badge">월 10개 이상 팔릴 때</span><span class="prompt-toggle-icon">▼</span></div>
+      <div class="prompt-body">
+        <div class="prompt-meta">
+          <div class="meta-block"><div class="meta-label">언제 쓰나요?</div><div class="meta-text">메인 상품이 월 10개 이상 팔리기 시작했을 때.</div></div>
+          <div class="meta-block"><div class="meta-label">작성 예시</div><div class="meta-text">메인: 월급 외 첫 수익 만들기 / 월 12개 / 후기 키워드: 프롬프트 유용</div></div>
+        </div>
+        <div class="prompt-code-section cat4-section">
+          <div class="prompt-code-label">복붙용 프롬프트<button class="copy-btn" onclick="copyPrompt(this, event)">📋 복사</button></div>
+          <pre class="prompt-code">당신은 단일 디지털 상품을 시리즈로 확장해
+월 수익을 10배 이상 키운 경험이 있는
+'디지털 상품 포트폴리오 전략가'입니다.
+
+아래 메인 상품을 기반으로 파생 상품 포트폴리오를 설계해주세요.
+메인 상품: [제목] / 월 판매: [개수]
+주요 후기 키워드: [후기에서 자주 나오는 키워드]
+
+[파생 상품 설계 조건]
+- 메인 상품 구매자가 자연스럽게 다음으로 살 것
+- 또는 메인을 안 산 다른 타겟에게 팔 수 있는 것
+- 제작 기간 짧은 순으로 정렬
+
+[출력 형식]
+번호 / 상품명 / 타겟 / 예상 가격 / 메인 대비 차별점 / 예상 제작 기간
+마지막에 '지금 당장 만들어야 하는 1순위 파생 상품과 이유' 별도 출력.</pre>
+        </div>
+        <div class="prompt-checkpoint">
+          <div class="checkpoint-label">✅ 체크포인트</div>
+          <ul class="checkpoint-list">
+            <li>메인 상품 월 10개 미만이면 아직 시작하지 말 것</li>
+            <li>'1순위 파생 상품'만 먼저 만들 것. 동시에 여러 개 시작하면 다 망함</li>
+            <li>후기에서 나온 '더 원하는 것'이 파생 상품에 반영됐는가?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <span>월급 외 첫 수익 만들기</span> — 구매자 전용 프롬프트 라이브러리 &nbsp;|&nbsp; 무단 복제·재배포 금지
+</footer>
+
+<script>
+  function toggleCard(card) {
+    card.classList.toggle('open');
+  }
+
+  function copyPrompt(btn, event) {
+    event.stopPropagation();
+    const pre = btn.closest('.prompt-code-section').querySelector('.prompt-code');
+    const text = pre.innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      const original = btn.innerHTML;
+      btn.innerHTML = '✅ 복사됨';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.innerHTML = original;
+        btn.classList.remove('copied');
+      }, 2000);
+    }).catch(() => {
+      // fallback
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      const original = btn.innerHTML;
+      btn.innerHTML = '✅ 복사됨';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.innerHTML = original;
+        btn.classList.remove('copied');
+      }, 2000);
+    });
+  }
+
+  // Nav tab active state on scroll
+  const sections = document.querySelectorAll('.category-section');
+  const tabs = document.querySelectorAll('.nav-tab');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 160) current = s.id;
+    });
+    tabs.forEach(t => {
+      t.classList.remove('active');
+      if (t.getAttribute('href') === '#' + current) t.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
